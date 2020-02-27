@@ -1,5 +1,19 @@
 <?php
 
+// Eloquent provides lifecyle trigger points in which one can
+// call operations.  One such is lifecyle trigger is:
+// created -- The model was created and saved... do something:
+
+\App\Project::created( function($project){
+	//when project created...generate activity.
+	\App\Activity::create(
+		[
+			'project_id' => $project->id
+		]
+	);
+});
+// some other trigger points are creating, udpated...etc.
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +25,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'auth'], function(){	
+	Route::get('/projects', 'ProjectsController@index');
+	Route::get('/projects/create', 'ProjectsController@create');
+	Route::get('/projects/{project}', 'ProjectsController@show');
+	Route::patch('/projects/{project}', 'ProjectsController@update');
+	Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+	Route::post('/projects', 'ProjectsController@store');	
+	Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+	Route::patch('/projects/{project}/tasks/{task}', 'ProjectTasksController@update');	
 });
+Route::get('/', 'ProjectsController@index');
+
+/* Respond to a project post request */
+
+Auth::routes();
+
+
