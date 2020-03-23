@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Facades\Tests\Setup\ProjectFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProjectTest extends TestCase
@@ -29,11 +30,12 @@ class ProjectTest extends TestCase
      */
     public function it_belongs_to_an_owner()
     {
-        $project = factory('App\Project')->create(); 
+        //$this->WithoutExceptionHandling();
+        $project = ProjectFactory::create();
         //using the Project model method 'user'
         //fetch the owner of the project:
-        $project = $this->assertInstanceOf('\App\User', $project->owner());
-       
+        
+        $this->assertInstanceOf('App\User', $project->owner);       
     }
 
     /**
@@ -53,5 +55,19 @@ class ProjectTest extends TestCase
         $this->assertCount(1, $project->tasks);
 
         $this->assertTrue($project->tasks->contains($task));
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_invite_a_user()
+    {
+        //given I have a project
+         $project = factory('App\Project')->create();
+        //and project invites another user
+        $project->invite( $user = factory(\App\User::class)->create());
+        //user should then be assigned as a project 'team member'
+        //( Note: You can call 'contains()' method on an Illuminate Collection )
+        $this->assertTrue( $project->members->contains($user) );
     }
 }

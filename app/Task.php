@@ -2,25 +2,46 @@
 
 namespace App;
 
-
 use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-	protected $guarded = [];
+    use Traits\RecordsActivity;
 
-	// touches references any relationships to this table
-	// whenever you update the TASK model.
-	// Update the 'updated_at' on projects whenever a task is updated or added.
-	protected $touches = ['project'];
+    protected $guarded = [];
+
+    protected $touches = ['project'];
+
+    protected $casts = [
+        'completed' => 'boolean'
+    ];
+
+    // public $old = [];
+
+    static $recordableEvents = ['created', 'deleted'];
     
+    public function complete()
+    {
+        $this->update(['completed' => true]);
+
+        $this->recordActivity('completed_task');
+    }
+
+    public function incomplete()
+    {
+        $this->update(['completed' => false]);
+
+        $this->recordActivity('incompleted_task');
+    }
+
     public function project()
     {
-    	return $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class);
     }
 
     public function path()
     {
-    	return '/projects/'. $this->project->id . '/tasks/'. $this->id;
+        return "/projects/{$this->project->id}/tasks/{$this->id}";
     }
+
 }

@@ -8,60 +8,111 @@ use App\Http\Requests\UpdateProjectRequest;
 
 class ProjectsController extends Controller
 {
+
+   /**
+     * View all projects.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-		//$projects = Project::all();
-        // Let's grab only this user's projects:
         $projects = auth()->user()->projects;
-		return view('projects.index', compact('projects'));
+
+        return view('projects.index', compact('projects'));
     }
 
+    /**
+     * Show a single project.
+     *
+     * @param Project $project
+     *
+     * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function show(Project $project)
+    {
+        $this->authorize('update', $project);
+
+        return view('projects.show', compact('project'));
+    }
+
+    /**
+     * Create a new project.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         return view('projects.create');
     }
 
-    public function store(UpdateProjectRequest $request)
-    {       
-       //$attributes['owner_id'] = auth()->id();
-       
-        $project = auth()->user()->projects()
-            ->create($request->validated());
+    /**
+     * Persist a new project.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store()
+    {
+        $attributes = request()->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'notes' => 'min:3'
+        ]);
 
-		return redirect($project->path());
+        $project = auth()->user()->projects()->create($attributes);
+
+        return redirect($project->path());
     }
 
+    /**
+     * Update the project.
+     *
+     * @param  Project $project
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function update(Project $project)
+    {
+        $this->authorize('update', $project);
+
+        $project->update(request(['notes']));
+
+        return redirect($project->path());
+    }
+
+
+    /**
+     * [edit description]
+     * @return [type] [description]
+     */
     public function edit(Project $project)
     {
-
-        $this->authorize( 'edit', $project );
-        
-        return view( 'projects.edit', compact('project') );
-
+        return view('projects.create', compact('project'));
     }
 
-    public function show(Project $project)
+    /**
+     * Delete the project.
+     *
+     * @param  Project $project
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(Project $project)
     {
-    	// use 'request' of the GET URI variable, which is defined in 
-    	// the web.php Route's URI as {$project}, which will be the 
-    	// id value of the project the request wants to get.
-        
-        //use our auth policy in app/http/policies/ProjectPolicy      
-        $this->authorize( 'update', $project );
-
-		return view('projects.show', compact('project'));
+        $this->authorize('update', $project);
+        $project->delete($project); 
+        return redirect('/projects');
     }
 
-    public function update( UpdateProjectRequest $request )
-    {    
-        //authorization and request validate are handled by 
-        //UpdateProjectRequest.
-        //...you now can access the form's request data as
-        // "$request->validated()":
-        $request->persist();
-        $project->redirect($request->project()->path());
-       
+    protected function validateRequest()
+    {
+        return request()->validate(
+            [
+                'title' => 'sometimes|required',
+                'description' => 'sometimes|required',
+                'notes' => 'nullable'
+            ]
+        );
     }
-
 
 }

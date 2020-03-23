@@ -25,18 +25,9 @@ class ProjectTasksController extends Controller
     {        
         $this->authorize('update', $task->project);
       
-        request()->validate(['body' => 'required']);
-        
-        // 'compeleted' represents a checkbox value, which if NOT checked,
-        // will not be included in the request data = error thrown;
-        // avoid errors with request's has() method.
-        $task->update([
+        $task->update( request()->validate(['body' => 'required']) );
 
-            'body' => request()->input( 'body' ),
-
-            'completed' => request()->has( 'completed' )
-
-        ]);
+        request('completed') ? $task->complete : $task->incomplete;        
 
         return redirect( $project->path() );
     }

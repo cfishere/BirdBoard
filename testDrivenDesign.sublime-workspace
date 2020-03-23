@@ -8,84 +8,47 @@
 	"buffers":
 	[
 		{
-			"file": "resources/views/projects/show.blade.php",
-			"settings":
-			{
-				"buffer_size": 2009,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "resources/views/projects/form.blade.php",
-			"settings":
-			{
-				"buffer_size": 897,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "routes/web.php",
-			"settings":
-			{
-				"buffer_size": 1082,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Controllers/ProjectsController.php",
-			"settings":
-			{
-				"buffer_size": 1708,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Http/Requests/UpdateProjectRequest.php",
-			"settings":
-			{
-				"buffer_size": 934,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "tests/Feature/ManageProjectsTest.php",
 			"settings":
 			{
-				"buffer_size": 4871,
+				"buffer_size": 5668,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/ProjectTasksController.php",
+			"file": "vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestResponse.php",
 			"settings":
 			{
-				"buffer_size": 1085,
+				"buffer_size": 33402,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tests/Feature/InvitationsTest.php",
+			"settings":
+			{
+				"buffer_size": 876,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/projects/edit.blade.php",
+			"file": "tests/Unit/ProjectTest.php",
 			"settings":
 			{
-				"buffer_size": 410,
+				"buffer_size": 1995,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "resources/views/projects/create.blade.php",
+			"file": "app/Policies/ProjectPolicy.php",
 			"settings":
 			{
-				"buffer_size": 356,
+				"buffer_size": 648,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -201,9 +164,13 @@
 		"/C/laragon/www/tdd/app",
 		"/C/laragon/www/tdd/app/Http",
 		"/C/laragon/www/tdd/app/Http/Controllers",
+		"/C/laragon/www/tdd/app/Http/Controllers/Auth",
+		"/C/laragon/www/tdd/app/Http/Middleware",
 		"/C/laragon/www/tdd/app/Http/Requests",
+		"/C/laragon/www/tdd/app/Observers",
 		"/C/laragon/www/tdd/app/Policies",
-		"/C/laragon/www/tdd/app/Providers",
+		"/C/laragon/www/tdd/app/Traits",
+		"/C/laragon/www/tdd/config",
 		"/C/laragon/www/tdd/database",
 		"/C/laragon/www/tdd/database/factories",
 		"/C/laragon/www/tdd/database/migrations",
@@ -212,6 +179,7 @@
 		"/C/laragon/www/tdd/resources/views",
 		"/C/laragon/www/tdd/resources/views/layouts",
 		"/C/laragon/www/tdd/resources/views/projects",
+		"/C/laragon/www/tdd/resources/views/projects/activity",
 		"/C/laragon/www/tdd/routes",
 		"/C/laragon/www/tdd/tests",
 		"/C/laragon/www/tdd/tests/Feature",
@@ -220,36 +188,62 @@
 	],
 	"file_history":
 	[
+		"/C/laragon/www/tdd/app/Project.php",
+		"/C/laragon/www/tdd/database/migrations/2020_03_20_174643_create_project_members_table.php",
+		"/C/laragon/www/tdd/database/migrations/2020_02_11_174927_create_tasks_table.php",
+		"/C/laragon/www/tdd/routes/web.php",
+		"/C/laragon/www/tdd/app/Traits/RecordsActivity.php",
+		"/C/laragon/www/tdd/app/Http/Controllers/ProjectsController.php",
+		"/C/laragon/www/tdd/resources/views/projects/card.blade.php",
+		"/C/laragon/www/tdd/tests/TestCase.php",
+		"/C/laragon/www/tdd/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/InteractsWithAuthentication.php",
+		"/C/laragon/www/tdd/resources/views/projects/activity/created_task.blade.php",
+		"/C/laragon/www/tdd/resources/views/projects/activity/updated.blade.php",
+		"/C/laragon/www/tdd/resources/views/projects/activity/incompleted_task.blade.php",
+		"/C/laragon/www/tdd/resources/views/projects/activity/created.blade.php",
+		"/C/laragon/www/tdd/resources/views/projects/activity/completed_task.blade.php",
+		"/C/laragon/www/tdd/tests/Unit/ActivityTest.php",
+		"/C/laragon/www/tdd/app/Activity.php",
+		"/C/laragon/www/tdd/database/migrations/2020_02_27_201704_create_activities_table.php",
+		"/C/laragon/www/tdd/tests/Feature/TriggerActivityTest.php",
+		"/C/laragon/www/tdd/app/Observers/ProjectObserver.php",
+		"/C/laragon/www/tdd/app/Task.php",
+		"/C/laragon/www/tdd/app/Observers/TaskObserver.php",
+		"/C/laragon/www/tdd/tests/Feature/ManageProjectsTest.php",
+		"/C/laragon/www/tdd/tests/Unit/ExampleTest.php",
+		"/C/laragon/www/tdd/database/factories/ProjectFactory.php",
+		"/C/laragon/www/tdd/resources/views/projects/activity/card.blade.php",
+		"/C/laragon/www/tdd/resources/views/projects/show.blade.php",
+		"/C/laragon/www/tdd/tests/CreatesApplication.php",
+		"/C/laragon/www/tdd/app/Http/Requests/UpdateProjectRequest.php",
+		"/C/laragon/www/tdd/vendor/laravel/framework/src/Illuminate/Http/Request.php",
+		"/C/laragon/www/tdd/config/telescope.php",
+		"/C/laragon/www/tdd/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestCase.php",
+		"/C/laragon/www/tdd/tests/Feature/RecordActivityTest.php",
+		"/C/laragon/www/tdd/app/Http/Controllers/ProjectTasksController.php",
+		"/C/laragon/www/tdd/app/Providers/AppServiceProvider.php",
+		"/C/laragon/www/tdd/tests/Feature/ProjectTasksTest.php",
+		"/C/laragon/www/tdd/database/factories/TaskFactory.php",
+		"/C/laragon/www/tdd/tests/Unit/TaskTest.php",
+		"/C/laragon/www/tdd/tests/Feature/ActivityFeedTest.php",
+		"/C/laragon/www/tdd/tests/Unit/UserTest.php",
+		"/C/laragon/www/tdd/tests/Unit/ProjectTest.php",
+		"/C/laragon/www/tdd/resources/views/projects/form.blade.php",
 		"/C/laragon/www/tdd/resources/views/projects/edit.blade.php",
 		"/C/laragon/www/tdd/resources/views/projects/create.blade.php",
-		"/C/laragon/www/tdd/app/Http/Controllers/ProjectsController.php",
-		"/C/laragon/www/tdd/tests/Feature/ManageProjectsTest.php",
 		"/C/laragon/www/tdd/app/Policies/ProjectPolicy.php",
-		"/C/laragon/www/tdd/routes/web.php",
-		"/C/laragon/www/tdd/app/Http/Controllers/ProjectTasksController.php",
-		"/C/laragon/www/tdd/tests/Feature/ProjectTasksTest.php",
-		"/C/laragon/www/tdd/tests/Unit/TaskTest.php",
-		"/C/laragon/www/tdd/database/factories/TaskFactory.php",
-		"/C/laragon/www/tdd/tests/Unit/ProjectTest.php",
-		"/C/laragon/www/tdd/app/Project.php",
-		"/C/laragon/www/tdd/tests/TestCase.php",
 		"/C/laragon/www/tdd/tests/Setup/ProjectFactory.php",
-		"/C/laragon/www/tdd/resources/views/projects/show.blade.php",
 		"/C/laragon/www/tdd/app/Providers/AuthServiceProvider.php",
-		"/C/laragon/www/tdd/database/factories/ProjectFactory.php",
-		"/C/laragon/www/tdd/app/Task.php",
 		"/C/laragon/www/tdd/app/User.php",
 		"/C/laragon/www/tdd/app/Policies/ProjectsPolicy.php",
 		"/C/laragon/www/tdd/database/migrations/2020_01_21_153635_create_projects_table.php",
 		"/C/laragon/www/tdd/vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestResponse.php",
-		"/C/laragon/www/tdd/database/migrations/2020_02_11_174927_create_tasks_table.php",
 		"/C/laragon/www/tdd/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
 		"/C/laragon/www/tdd/vendor/laravel/framework/src/Illuminate/Routing/RouteSignatureParameters.php",
 		"/C/laragon/www/tdd/vendor/nesbot/carbon/src/Carbon/Traits/Mixin.php",
 		"/C/laragon/www/tdd/resources/views/projects/index.blade.php",
 		"/C/laragon/www/tdd/resources/views/layouts/app.blade.php",
 		"/C/laragon/www/tdd/resources/sass/app.scss",
-		"/C/laragon/www/tdd/resources/views/projects/card.blade.php",
 		"/C/laragon/www/tdd/tests/Feature/ManageProjectTest.php",
 		"/C/laragon/www/tdd/tailwind.js",
 		"/C/laragon/www/tdd/.gitignore",
@@ -260,7 +254,6 @@
 		"/C/laragon/www/tdd/app/Http/Controllers/HomeController.php",
 		"/C/laragon/www/tdd/tailwind.config.js",
 		"/C/laragon/www/tdd/testDrivenDesign.sublime-project",
-		"/C/laragon/www/tdd/tests/Unit/UserTest.php",
 		"/C/laragon/www/tdd/database/factories/UserFactory.php",
 		"/C/laragon/www/tdd/phpunit.xml",
 		"/C/laragon/www/laracast-demo/resources/views/postalcodes/searchresult.blade.php",
@@ -322,42 +315,18 @@
 		"/C/laragon/www/laracast-demo/packages/Myopicseer/Profile/src/Profile.php",
 		"/C/laragon/www/laracast-demo/app/Http/Profiles/Males.php",
 		"/C/laragon/www/laracast-demo/packages/Myopicseer/Profile/composer.json",
-		"/C/laragon/www/laracast-demo/packages/Myopicseer/Profile/config/profile.php",
-		"/C/laragon/www/laracast-demo/resources/views/profiles/Profiles.php",
-		"/C/laragon/www/laracast-demo/app/Http/Profiles/Females.php",
-		"/C/laragon/www/laracast-demo/resources/views/partials/nav.blade.php",
-		"/C/laragon/www/laracast-demo/app/Http/Controllers/DatingProfilesController.php",
-		"/C/laragon/www/laracast-demo/public/js/app.js",
-		"/C/laragon/www/laracast-demo/public/js/bootstrap.min.js",
-		"/C/laragon/www/laracast-demo/public/css/bulma.0.7.5-min.css",
-		"/C/laragon/www/laracast-demo/app/User.php",
-		"/C/laragon/www/laracast-demo/database/factories/UserFactory.php",
-		"/C/laragon/www/laracast-demo/time.php",
-		"/C/laragon/www/laracast-demo/.gitignore",
-		"/C/laragon/www/laracast-demo/app/Http/Requests/DatingProfileRequest.php",
-		"/C/laragon/www/laracast-demo/database/seeds/UserTableSeeder.php",
-		"/C/laragon/www/laracast-demo/database/factories/ModelFactory.php",
-		"/C/laragon/www/laracast-demo/server.php",
-		"/C/laragon/www/laracast-demo/tests/Feature/GenderProfilesTest.php",
-		"/C/laragon/www/laracast-demo/database/seeds/ProfileTableSeeder.php",
-		"/C/laragon/www/laracast-demo/resources/views/forms/partials/values.blade.php",
-		"/C/laragon/www/laracast-demo/resources/views/datingprofiles/create.blade.php",
-		"/C/laragon/www/laracast-demo/resources/views/datingprofiles/edit.blade.php",
-		"/C/laragon/www/laracast-demo/app/Http/Controllers/Auth/RegisterController.php",
-		"/C/laragon/www/laracast-demo/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php",
-		"/C/laragon/www/laracast-demo/app/State.php",
-		"/C/laragon/www/laracast-demo/node_modules/laravel-mix/src/components/Vue.js",
-		"/C/laragon/www/laracast-demo/.env"
+		"/C/laragon/www/laracast-demo/packages/Myopicseer/Profile/config/profile.php"
 	],
 	"find":
 	{
-		"height": 74.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
 		"height": 173.0,
 		"where_history":
 		[
+			"C:\\laragon\\www\\tdd,C:\\laragon\\www\\tdd\\tests",
 			"C:\\laragon\\www\\tdd"
 		]
 	},
@@ -366,6 +335,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"member",
+			"{{",
+			"$project->owner",
+			"ProjectFactory::create",
+			"actingAs",
+			"$project->owne",
+			"            \n",
+			"UpdateProjectRequest",
+			"env",
+			"validate",
+			"this->post",
+			"signin",
+			"$this->post('/proj",
+			"$this->post",
+			"Task",
 			"validate",
 			"dd",
 			"/>",
@@ -393,24 +377,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "resources/views/projects/show.blade.php",
+					"file": "tests/Feature/ManageProjectsTest.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2009,
+						"buffer_size": 5668,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1858,
-								1858
+								32,
+								204
 							]
 						],
 						"settings":
@@ -419,31 +403,65 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 924.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "vendor/laravel/framework/src/Illuminate/Foundation/Testing/TestResponse.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 33402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4460,
+								4460
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1354.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "resources/views/projects/form.blade.php",
+					"buffer": 2,
+					"file": "tests/Feature/InvitationsTest.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 897,
+						"buffer_size": 876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								724,
-								894
+								320,
+								320
 							]
 						],
 						"settings":
@@ -452,31 +470,66 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 504.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "routes/web.php",
+					"buffer": 3,
+					"file": "tests/Unit/ProjectTest.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1082,
+						"buffer_size": 1995,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1020,
-								1020
+								1995,
+								1995
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Policies/ProjectPolicy.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 648,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								526,
+								526
 							]
 						],
 						"settings":
@@ -491,208 +544,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/Http/Controllers/ProjectsController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1708,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1689,
-								1689
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1176.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/Http/Requests/UpdateProjectRequest.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 934,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								925,
-								925
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 420.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "tests/Feature/ManageProjectsTest.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4871,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3039,
-								3039
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2391.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/Http/Controllers/ProjectTasksController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1085,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								635,
-								635
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 224.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "resources/views/projects/edit.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 410,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								43,
-								43
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "resources/views/projects/create.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 356,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								24
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Laravel Blade Highlighter/blade.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -754,6 +606,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"create_proje",
+				"database\\migrations\\2020_03_20_174643_create_project_members_table.php"
+			],
+			[
+				"projecttask",
+				"app\\Http\\Controllers\\ProjectTasksController.php"
+			],
+			[
+				"web.p",
+				"routes\\web.php"
+			],
+			[
+				"create_acti",
+				"database\\migrations\\2020_02_27_201704_create_activities_table.php"
+			],
+			[
+				"web.ph",
+				"routes\\web.php"
+			],
+			[
+				"Project.ph",
+				"app\\Project.php"
+			],
+			[
+				"Activi",
+				"tests\\Feature\\ActivityFeedTest.php"
+			],
 			[
 				"projects/show",
 				"resources\\views\\projects\\show.blade.php"

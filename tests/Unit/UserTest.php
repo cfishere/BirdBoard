@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 use Illuminate\database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -22,7 +22,7 @@ class UserTest extends TestCase
     public function a_user_has_projects()
     {
         // given I have a user:
-        $user = factory('App\User')->create();
+        $user = factory(\App\User::class)->create();
 
         $this->assertInstanceOf(Collection::class, $user->projects);
     }
